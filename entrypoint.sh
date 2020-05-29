@@ -39,7 +39,7 @@ echo "ls HOME: "$(ls -la $HOME)
 echo "ls ~: "$(ls -la ~)
 echo "Connecting to $INPUT_REMOTE_HOST..."
 "ls -la ~/.docker"
-ls -la ~/.docker
+# ls -la ~/.docker
 "ls -la $HOME/.docker"
 ls -la $HOME/.docker
 "cat ~/.docker/config.json"
