@@ -35,10 +35,8 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
 fi
 
 echo "HOME $HOME"
-echo "GITHUB_WORKSPACE $GITHUB_WORKSPACE"
-echo "HOME: "$(ls $HOME)
-echo "GITHUB_WORKSPACE: "$(ls $GITHUB_WORKSPACE)
+echo "ls HOME: "$(ls $HOME)
+echo "ls ~: "$(ls ~)
 echo "Connecting to $INPUT_REMOTE_HOST..."
-cat $GITHUB_WORKSPACE/.docker/config.json
-cat ~/.docker/config.json
+
 docker --log-level debug --host "$INPUT_REMOTE_HOST" "$@" 2>&1
