@@ -35,16 +35,16 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
 fi
 
 echo "HOME $HOME"
-echo "ls HOME: "$(sudo ls -la $HOME)
-echo "ls ~: "$(sudo ls -la ~)
+echo "ls HOME: "$(ls -la $HOME)
+echo "ls ~: "$(ls -la ~)
 echo "Connecting to $INPUT_REMOTE_HOST..."
-# echo "sudo ls -la ~/.docker"
+# echo "ls -la ~/.docker"
 # ls -la ~/.docker
-echo "sudo ls -la $HOME/.docker"
+echo "ls -la $HOME/.docker"
 ls -la $HOME/.docker
-# echo "sudo cat ~/.docker/config.json"
+# echo "cat ~/.docker/config.json"
 # cat ~/.docker/config.json
-echo "sudo cat $HOME/.docker/config.json"
+echo "cat $HOME/.docker/config.json"
 cat $HOME/.docker/config.json
 
 docker --log-level debug --host "$INPUT_REMOTE_HOST" "$@" 2>&1
