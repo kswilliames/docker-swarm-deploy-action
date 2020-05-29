@@ -34,6 +34,10 @@ if [ ${INPUT_REMOTE_HOST#"ssh://"} != "$INPUT_REMOTE_HOST" ]; then
     printf '%s %s\n' "$SSH_HOST" "$INPUT_SSH_PUBLIC_KEY" >> /etc/ssh/ssh_known_hosts
 fi
 
+echo "HOME $HOME"
+echo "GITHUB_WORKSPACE $GITHUB_WORKSPACE"
+echo "HOME: "$(ls $HOME)
+echo "GITHUB_WORKSPACE: "$(ls $GITHUB_WORKSPACE)
 echo "Connecting to $INPUT_REMOTE_HOST..."
 cat $GITHUB_WORKSPACE/.docker/config.json
 cat ~/.docker/config.json
