@@ -38,5 +38,6 @@ echo "HOME $HOME"
 echo "ls HOME: "$(ls -la $HOME)
 echo "ls ~: "$(ls -la ~)
 echo "Connecting to $INPUT_REMOTE_HOST..."
+cat ~/.docker/config.json
 
 docker --log-level debug --host "$INPUT_REMOTE_HOST" "$@" 2>&1
