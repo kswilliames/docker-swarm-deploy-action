@@ -39,12 +39,12 @@ echo "ls HOME: "$(sudo ls -la $HOME)
 echo "ls ~: "$(sudo ls -la ~)
 echo "Connecting to $INPUT_REMOTE_HOST..."
 echo "sudo ls -la ~/.docker"
-sudo ls -la ~/.docker
+ls -la ~/.docker
 echo "sudo ls -la $HOME/.docker"
-sudo ls -la $HOME/.docker
+ls -la $HOME/.docker
 echo "sudo cat ~/.docker/config.json"
-sudo cat ~/.docker/config.json
+cat ~/.docker/config.json
 echo "sudo cat $HOME/.docker/config.json"
-sudo cat $HOME/.docker/config.json
+cat $HOME/.docker/config.json
 
 docker --log-level debug --host "$INPUT_REMOTE_HOST" "$@" 2>&1
