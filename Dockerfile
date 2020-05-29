@@ -10,6 +10,9 @@ LABEL "com.github.actions.color"="blue"
 
 RUN apk --no-cache add openssh-client
 
+RUN mkdir ~/.docker
+COPY $HOME/.docker/config.json ~/.docker/config.json
+
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
